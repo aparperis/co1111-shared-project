@@ -8,5 +8,5 @@ Team members:
 
 Team Roles:
 Andreas Parperis - Managment, development, testing.
-Andreas Dimitriou - testing, development, promoter
-George Antoniou - testing, develompent.
+Andreas Dimitriou - testing, development.
+George Antoniou - testing, develompent, promoter.
