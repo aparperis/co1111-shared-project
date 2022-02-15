@@ -1,0 +1,14 @@
+#main {
+    position: absolute;
+    width: 50%
+}
+
+.names{
+
+    color: blue;
+
+}
+.list{
+    position: relative;
+    text-align: center;
+}
