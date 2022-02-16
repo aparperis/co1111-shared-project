@@ -20,21 +20,14 @@ body{
     width:30%;
 }
 .header{
-   /* border: 1px solid black;
-    padding:10px;
-    position:absolute;
-    width:100%;
 
-    top: 30px;
-    left:0px;
-    height:60px; */
 
     padding: 20px;
     text-align: center;
 
     color: white;
     font-size: 30px;
-    background-color: #38ab68;
+    background:linear-gradient( #38ab68, #46704b);
 }
 
 #header-text{
@@ -49,9 +42,14 @@ body{
     background:linear-gradient(#ccd8d9, #6bafb5);
     position:relative;
     margin:5px;
+    width:70px;
+    padding:7px;
 
-    padding:10px;
+}
 
+.btn:hover
+{
+    font-size:20px;
 }
 .container
 {
@@ -114,7 +112,7 @@ h2
     color:white;*/
     position: sticky;
     border-style: hidden;
-    background-color: #34516C;
+    background-color: #212326;
     margin-top:10%;
     margin:0;
     padding:40px;
@@ -124,5 +122,9 @@ h2
 a{
     color:white;
     pading:5px;
-
+}
+a:hover
+{
+    color:#a8a831;
+    font-size:20px;
 }
