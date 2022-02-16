@@ -18,3 +18,9 @@ Created the landing page that includes:
 - Twitter Account for treasure hunt assignment.
 - created header and footer with basic design.
 - Implemented a button that brings you to the treasure hunt application once the player is ready.
+ 
+ 
+ #Edit:
+ -Finished the landing page.
+ -Added an explanation what the Treasure Hunt API is.
+ -Added roles to team mmembers.
