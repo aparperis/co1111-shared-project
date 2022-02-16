@@ -12,10 +12,10 @@ body{
 
 .content {
     position: absolute;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin-left:40%;
     padding:30px;
-    height:180vh;
+    height:100vh;
     margin-bottom:10px;
     width:30%;
 }
@@ -29,7 +29,7 @@ body{
     left:0px;
     height:60px; */
 
-    padding: 40px;
+    padding: 20px;
     text-align: center;
 
     color: white;
@@ -37,12 +37,21 @@ body{
     background-color: #38ab68;
 }
 
+#header-text{
+  font-size:15px;
+
+}
 .btn
 {
-    float:right ;
-    font-size: 25px;
-    margin-right:0px;
+
+    font-size: 15px;
+     border-radius:20px;
     background:linear-gradient(#ccd8d9, #6bafb5);
+    position:relative;
+    margin:5px;
+
+    padding:10px;
+
 }
 .container
 {
@@ -73,6 +82,28 @@ body{
 
 }
 
+li{
+    border:1px solid black;
+    padding:10px;
+}
+
+
+.roles{
+    text-decoration: underline;
+}
+
+h2
+{
+    text-align: center;
+    color:#38ab68;
+    text-shadow: 2px 2px grey;
+}
+#p_2
+{
+    color:black;
+    font-size: 20px;
+    text-align: center;
+}
 .footer
 {
     /*position:relative;
@@ -81,6 +112,7 @@ body{
     margin-top: auto;
     background-color: black;
     color:white;*/
+    position: sticky;
     border-style: hidden;
     background-color: #34516C;
     margin-top:10%;
