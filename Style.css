@@ -6,11 +6,13 @@
     text-decoration: none;
 }
 
-body{
+body  /* Adding the height of the body of the page */
+{
     min-height: 180vh;
 }
 
-.content {
+.content
+{
     position: absolute;
     /* border: 1px solid black; */
     margin-left:35%;
@@ -77,8 +79,6 @@ body{
     text-align: center;
     padding:10px;
     font-size: 20px;
-
-
 }
 
 li{
@@ -125,7 +125,7 @@ a{
     color:white;
     pading:5px;
 }
-a:hover
+a:hover /* Resize and color change when hovering over the link */
 {
     color:lightskyblue;
     font-size:20px;
