@@ -29,4 +29,4 @@ Created the landing page that includes:
 Made some minor changes to fix certain problems.
 
 # 2/18/2022
-Made some minor changing in regards to agjust the potiotion of the code to be more certain.
+Made some minor changing in regards to adjust the positions of the code to be more certain.
