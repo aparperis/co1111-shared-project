@@ -24,3 +24,9 @@ Created the landing page that includes:
  -Finished the landing page.
  -Added an explanation what the Treasure Hunt API is.
  -Added roles to team mmembers.
+
+# 2/17/2022
+Made some minor changes to fix certain problems.
+
+# 2/18/2022
+Made some minor changing in regards to agjust the potiotion of the code to be more certain.
