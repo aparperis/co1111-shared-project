@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-size: border-box;
-    font-family: sans-serif;
+    font-family: Verdana;
     list-style: none;
     text-decoration: none;
 }
@@ -14,6 +14,7 @@ nav
     align-items: center;
     min-height: 8vh;
     background-color: #212326;
+
 }
 
 .Logo{
@@ -32,6 +33,14 @@ nav
     color:#dfe6e4;
     letter-spacing:1px;
 }
+
+.nav-items a:hover
+{
+    color: #b39e66;
+    font-size:17px;
+    transition: all 0.2s ease;
+}
+
 
 .hamburger-menu
 {
@@ -106,6 +115,23 @@ nav
     color:#b39e66;
 }
 
+.button
+{
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+    top: 30px;
+    border: 3px solid #b39e66;
+    padding: 5px;
+    border-radius: 8px;
+
+}
+
+.button:hover
+{
+    background-color: #b39e66;
+}
+
 
 #about-section
 {
@@ -119,6 +145,29 @@ nav
 {
     color:#b39e66 ;
 }
+
+.top
+{
+    position: relative;
+    font-size: 20px;
+    padding:5px;
+    border:2px solid #b39e66;
+    font-weight: bold;
+    border-radius: 8px;
+
+
+}
+
+.top a{
+  color:black;
+}
+.top:hover
+{
+    background-color: #b39e66;
+    transition: all 0.6s ease;
+}
+
+
 
 #team-section
 {
@@ -135,20 +184,16 @@ nav
     color:#b39e66 ;
 }
 
-.button
-{
+#social-media-section{
+    font-size: 30px;
     position: relative;
-    font-size: 25px;
-    font-weight: bold;
-    top: 30px;
-    border: 3px solid #b39e66;
-    padding: 5px;
-    border-radius: 8px;
+    text-align: center;
+    height:100vh;
+    width: 100%;
 }
-.button:hover
+#social-media-section h1
 {
-    background-color: #b39e66;
-    transform: translateX(10px);
+    color:#b39e66 ;
 }
 
 
