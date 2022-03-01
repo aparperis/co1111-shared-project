@@ -1,132 +1,202 @@
 *{
-    font-family: sans-serif; /*The * is used to target everything the DOM*/
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    box-size: border-box;
+    font-family: sans-serif;
     list-style: none;
     text-decoration: none;
 }
 
-body  /* Adding the height of the body of the page */
+nav
 {
-    min-height: 180vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #212326;
 }
 
+.Logo{
+    color:#b39e66;
+    font-size: 15px;
+}
+
+.nav-items
+{
+    display: flex; /*Displays items next to each other*/
+    width:50%;
+    justify-content: space-around;
+
+}
+.nav-items a{
+    color:#dfe6e4;
+    letter-spacing:1px;
+}
+
+.hamburger-menu
+{
+    display: none;
+
+}
+
+.hamburger-menu div {
+    width: 25px;
+    height: 5px;
+    background-color:#dfe6e4;
+    margin: 5px;
+}
+
+@media screen and (max-width: 650px)
+{
+    body
+    {
+        overflow-x: hidden; /*Makes it so you cannot scroll to the right*/
+    }
+    .hamburger-menu
+    {
+        display: block;
+        cursor: pointer;
+    }
+    .nav-items{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 40px;
+        background-color:#212326;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        transform: translateX(100%); /*This will make this menu move in and out the screen*/
+
+    }
+
+    .column_1, .column_2
+    {
+        font-size: 12px;
+    }
+}
+
+
+
+.Logo
+{
+    font-size: 15px;
+}
+
+.bg_area
+{
+    position:relative;
+    width: 100%;
+    height: 100vh;
+    /*background: url(th_img.jfif);*/
+    /*background-size: cover;*/
+    background-color: lightgray;
+    z-index: -1;
+}
 .content
 {
-    position: absolute;
-    /* border: 1px solid black; */
-    margin-left:35%;
-    padding:30px;
-    height:100vh;
-    margin-bottom:10px;
-    width:30%;
-}
-.header{
-
-
-    padding: 20px;
     text-align: center;
-
-    color: white;
-    font-size: 30px;
-    background:#212326;
+    position: relative;
+    top: 30%;
+    font-size: 40px;
 }
-
-#header-text{
-  font-size:15px;
-
-}
-.btn
+.content h1
 {
-
-    font-size: 15px;
-     border-radius:20px;
-    background:linear-gradient(#ccd8d9, #6bafb5);
-    position:relative;
-    margin:5px;
-    width:70px;
-    padding:7px;
-
+    color:#b39e66;
 }
 
-.btn:hover
+
+#about-section
 {
-    font-size:20px;
-}
-.container
-{
-    border:1px solid black;
-    position:relative;
-
-    height:80%;
-    padding:20px;
-
-}
-
-.names
-{
-    text-align: center;
-    color:#38ab68;
-    text-shadow: 2px 2px grey;
-}
-.paragraph_1
-{
-    font-size:30px;
-    text-decoration: underline;
-}
-.name-list{
     position: relative;
     text-align: center;
-    padding:10px;
-    font-size: 20px;
+    height:100vh;
+    width: 100%;
+    font-size: 30px;
 }
-
-li{
-    border:1px solid black;
-    padding:10px;
-
-}
-
-
-.roles{
-    text-decoration: underline;
-}
-
-h2
+#about_h1
 {
-    text-align: center;
-    color:#38ab68;
-    text-shadow: 2px 2px grey;
+    color:#b39e66 ;
 }
-#p_2
+
+#team-section
 {
-    color:black;
-    font-size: 20px;
+    font-size: 30px;
+    position: relative;
     text-align: center;
+    height:100vh;
+    width: 100%;
+
 }
+
+#team-section h1
+{
+    color:#b39e66 ;
+}
+
+.button
+{
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+    top: 30px;
+    border: 3px solid #b39e66;
+    padding: 5px;
+    border-radius: 8px;
+}
+.button:hover
+{
+    background-color: #b39e66;
+    transform: translateX(10px);
+}
+
+
 .footer
 {
-    /*position:relative;
-    width:100%;
-    padding:40px;
-    margin-top: auto;
-    background-color: black;
-    color:white;*/
     position: sticky;
-    border-style: hidden;
+    width: 100%;
+    top: 100%;
+    height: 150px;
+    margin-top: auto;
     background-color: #212326;
-    margin-top:10%;
-    margin:0;
-    padding:40px;
-
 
 }
-a{
-    color:white;
-    pading:5px;
-}
-a:hover /* Resize and color change when hovering over the link */
+
+.column_1
 {
-    color:lightskyblue;
-    font-size:20px;
+    position:absolute;
+    float:left;
+    padding:20px;
+    top:10px;
+    font-size: 20px;
+}
+
+.column_2
+{
+    position:absolute;
+    margin:20px;
+    left:40%;
+    top:10px;
+}
+.column_2 h4{
+    font-size: 20px;
+}
+
+#Twitter{
+    position:relative;
+    top:10px;
+    color: white;
+}
+
+.social,.contact
+{
+    color:#b39e66;
+}
+
+.email
+{
+    color: white;
+    padding: 5px;
+    font-size:15px;
 }

@@ -1,73 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Linked a website called FontAwesome to allow us to use the twitter icon -->
-    <meta charset="UTF-8">
-    <title>Treasure Hunt</title>
-    <link rel="stylesheet" href="Style.css">
-  </head>
-  <body>
-   <div class="content"> <!-- This div tag contains all the content of the page -->
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Linked a website called FontAwesome to allow us to use the twitter icon -->
 
-         <div class="header">
-           <p id="header-text">To start the game press the Start Button.</p>
-           <button class="btn">Start</button>
-         </div>
+  <meta charset="UTF-8">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Added a title for the treasure hunt API -->
+  <title>Treasure Hunt</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<nav>
+  <div class ="Logo">
+    <h2>TREASURE HUNT</h2>
+  </div>
+  <ul class="nav-items">
+    <li><a href="#">Home</a></li>
+    <li><a href="#about-section">About</a></li>
+    <li><a href="#team-section">Team</a></li>
+    <li><a href="#">Social Media</a></li>
+  </ul>
+  <div class="hamburger-menu" onclick="navTransition()">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
 
+</nav>
 
+<div class="bg_area">
+  <div class="content">
+    <h1>Start your adventure now</h1>
+    <button class="button">Start Game</button>
+  </div>
 
-   <div class="container">
-     <div class="names">
-       <p class="paragraph_1">C0111 Treasure Hunt Assignment</p>
-       <br>
-       <h1>
-        TEAM MEMBER NAMES AND ROLES
-       </h1>
+</div>
+<section id="about-section">
+  <h1 id="about_h1">About Us</h1>
+</section>
 
-     </div>
-     <div class="name-list">
-      <ul>
-        <li><b>Andreas Dimitriou</b>
-          <ul class="roles">
-            Development, Testing.
-          </ul>
-        </li>
-
-
-        <li><b>Andreas Parperis</b>
-          <ul class="roles">
-            Management, Development, Testing.
-          </ul>
-        </li>
-
-
-        <li><b>George Antoniou</b>
-          <ul class="roles">
-            Testing, Development, Promoting.
-          </ul>
-        </li>
-      </ul>
-
-     </div>
-
-     <div class="purpose">
-
-       <h2>What Is The Treasure Hunt API</h2>
-       <p id="p_2"><b>The treasure hunt API is a web application that demonstrates the use of html,css,and javascript to create a game.</b></p>
-     </div>
-     </div>
+<!-- Team section -->
 
 
+<section id="team-section">
+  <h1>Meet Our Team</h1>
 
-     <!-- Added a footer which contains the link to the Twitter account  -->
-     <footer class="footer">
-       <a href="https://twitter.com/GAntoniou_4" class="fa fa-twitter" id="link"> Twitter Account</a>
-     </footer>
+</section>
 
 
-   </div>
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="column_1">
+    <h4 class="social">Social Media</h4>
+    <a href="#" class="fa fa-twitter" id="Twitter">Twitter</a>
+  </div>
 
-  </body>
-  </html>
+  <div class="column_2">
+    <h4 class="contact">Contact Us</h4>
+    <p class="email">AParperis@uclan.ac.uk</p>
+    <p class="email">ADimitriou4@uclan.ac.uk</p>
+    <p class="email">GAntoniou4@uclan.ac.uk</p>
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
