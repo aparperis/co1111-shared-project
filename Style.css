@@ -109,6 +109,7 @@ nav
     position: relative;
     top: 30%;
     font-size: 40px;
+
 }
 .content h1
 {
@@ -121,16 +122,18 @@ nav
     font-size: 25px;
     font-weight: bold;
     top: 30px;
-    border: 3px solid #b39e66;
+    color: #b39e66;
     padding: 5px;
-    border-radius: 8px;
+
 
 }
 
 .button:hover
 {
-    background-color: #b39e66;
+    font-size:30px;
 }
+
+
 
 
 #about-section
