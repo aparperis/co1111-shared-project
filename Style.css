@@ -28,6 +28,7 @@ nav
     width:50%;
     justify-content: space-around;
 
+
 }
 .nav-items a{
     color:#dfe6e4;
@@ -77,7 +78,7 @@ nav
         align-items: center;
         width: 30%;
         transform: translateX(100%); /*This will make this menu move in and out the screen*/
-
+        z-index: 1;
     }
 
     .column_1, .column_2
@@ -101,7 +102,7 @@ nav
     /*background: url(th_img.jfif);*/
     /*background-size: cover;*/
     background-color: lightgray;
-    z-index: -1;
+
 }
 .content
 {
@@ -109,6 +110,7 @@ nav
     position: relative;
     top: 30%;
     font-size: 40px;
+
 
 }
 .content h1
@@ -122,7 +124,7 @@ nav
     font-size: 25px;
     font-weight: bold;
     top: 30px;
-    color: #b39e66;
+    color: black;
     padding: 5px;
 
 
@@ -130,7 +132,9 @@ nav
 
 .button:hover
 {
-    font-size:30px;
+    font-size:35px;
+    color: #b39e66;
+    transition: all 0.5s ease;
 }
 
 
