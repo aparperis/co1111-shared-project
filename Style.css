@@ -99,9 +99,9 @@ nav
     position:relative;
     width: 100%;
     height: 100vh;
-    /*background: url(th_img.jfif);*/
-    /*background-size: cover;*/
-    background-color: lightgray;
+    background: url(th_img.jfif);
+    background-size: cover;
+    /*background-color: lightgray;*/
 
 }
 .content
