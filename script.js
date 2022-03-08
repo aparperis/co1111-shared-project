@@ -15,19 +15,32 @@ function navTransition()
     }
 }
 
-/*fetch('https://codecyprus.org/th/api/list')
-    .then(response => response.json())
-    .then(jsonObject => { console.log(jsonObject)
-    }); */
+ /* async function callList()
+  {
+      const response = await
+      fetch('https://codecyprus.org/th/api/list');
+      const reply=await response.text();
 
-function calLlIST() {
-    let httpRequest=new XMLHttpRequest();
+      document.getElementById("myDiv").innerText=reply;
 
-    httpRequest.onload=function() {
-        document.getElementById('myDiv').innerText=this.responseText;
-    };
+  }
 
-    httpRequest.open("https://codecyprus.org/th/api/list",true);
-    httpRequest.send();
-}
-calLlIST();
+  callList();
+*/
+
+         let response=fetch('https://codecyprus.org/th/api/list')
+         .then(response => response.json())
+         .then(json =>{ console.log(json)}
+        );
+
+
+       /*let challengesList=document.getElementById("challenges");
+
+        response.forEach(item=> {
+           let listItem=document.createElement("li");
+            listItem.innerHTML=json.treasureHunts[item].name;
+             challengesList.appendChild(listItem);
+           });
+*/
+
+
