@@ -15,32 +15,24 @@ function navTransition()
     }
 }
 
- /* async function callList()
-  {
-      const response = await
-      fetch('https://codecyprus.org/th/api/list');
-      const reply=await response.text();
-
-      document.getElementById("myDiv").innerText=reply;
-
-  }
-
-  callList();
-*/
 
          let response=fetch('https://codecyprus.org/th/api/list')
          .then(response => response.json())
-         .then(json =>{ console.log(json)}
+         .then(json =>{ console.log(json)
+
+         }
         );
 
 
-       /*let challengesList=document.getElementById("challenges");
 
-        response.forEach(item=> {
+       let challengesList=document.getElementById("challenges");
+      /* Hre I have to reference the parsed array*/
+
+           response.forEach(item=> {
            let listItem=document.createElement("li");
-            listItem.innerHTML=json.treasureHunts[item].name;
+            listItem.innerHTML=json.treasureHunts[item];
              challengesList.appendChild(listItem);
            });
-*/
+
 
 
