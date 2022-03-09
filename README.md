@@ -30,3 +30,11 @@ Made some minor changes to fix certain problems.
 
 # 2/18/2022
 Made some minor changing in regards to adjust the positions of the code to be more certain.
+
+# 3/1/2022
+-Started adding /list api.
+
+# 3/3/2022
+-Recreated the index page to make it more stylish and also responsive
+-Added pictures of our team
+-Added our social media
