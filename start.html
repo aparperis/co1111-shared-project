@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start</title>
+</head>
+<body>
+    <p>Enter your name:</p>
+    <input type="text" id="playerName" />
+
+    <input type="button" onclick="start()" />
+
+    <script>
+        const params = new URLSearchParams(location.search);
+        const treasureHuntID = params.get("treasureHuntID");
+
+        console.log(treasureHuntID);
+
+
+        function start() {
+            const playerName = document.getElementById("playerName").value;
+            const appName = "Team5App";
+            const START_URL = "https://codecyprus.org/th/api/start?player=" + playerName + "&app=" + appName + "&treasure-hunt-id=" + treasureHuntID;
+
+            console.log(START_URL);
+
+        }
+
+    </script>
+
+</body>
+</html>

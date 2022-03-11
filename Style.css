@@ -198,7 +198,7 @@ nav
     text-align: center;
     height:150vh;
     width: 95%;
-
+   
 }
 
 #team-section h1
@@ -340,4 +340,24 @@ img
     text-align: center;
     color: #b39e66;
     top:60px;
+}
+#myDiv{
+    position: relative;
+    padding: 10px;
+    height:50vh;
+    margin-left:20px;
+    margin-right: 20px;
+    margin-top:20px;
+
+}
+
+
+#challenges
+{
+    font-size:20px;
+    font-weight: bold;
+    text-align: center;
+    position:relative;
+    top:15px;
+
 }

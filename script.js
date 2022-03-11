@@ -16,25 +16,7 @@ function navTransition()
 }
 
 
-     /*    let response=fetch('https://codecyprus.org/th/api/list')
-         .then(response => response.json())
-         .then(json =>{ console.log(json)
 
-         }
-        );
-
-
-
-       let challengesList=document.getElementById("challenges");
-
-
-           response.forEach(item=> {
-           let listItem=document.createElement("li");
-            listItem.innerHTML=json.treasureHunts[item];
-             challengesList.appendChild(listItem);
-           });
-
-*/
 let list_url='https://codecyprus.org/th/api/list';
 
   async function getList()
@@ -47,14 +29,20 @@ let list_url='https://codecyprus.org/th/api/list';
 
       let array=json_data.treasureHunts;
 
+      let challengeList=document.getElementById("challenges");
 
       for(const item of array)
       {
-          let listItem=document.createElement("li");
-          listItem.textContent=item;
-          let challengeList=document.getElementById("challenges");
-          challengeList.appendChild(listItem);
+
+                 let listItem=document.createElement("a");
+                 listItem.textContent= item.name ;
+                 listItem.href = "start.html?treasureHuntID=" + item.uuid;
+                 challengeList.appendChild(listItem);
+                 challengeList.appendChild(document.createElement("br"))
       }
+
+
+
 
   }
 
