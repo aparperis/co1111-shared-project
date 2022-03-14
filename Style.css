@@ -361,10 +361,51 @@ img
     top:15px;
 
 }
+#challenges a {
+
+    color:#212326;
+    padding: 20px;
+}
+
+#challenges a:hover{
+    color: #b39e66;
+    transition: all 0.5s ease;
+}
 
 #playerName
 {
     position: relative;
     border-radius: 8px;
-    align-items: center;
+    margin-left:75px;
+    margin-top:30px;
+    padding: 10px;
+}
+
+#register
+{
+    background-color: lightgray;
+    position:relative;
+    padding: 10px;
+    margin-top:30px;
+    width:50vh;
+    height:60vh;
+    margin-left:80vh;
+}
+
+#name-input
+{
+    color:#b39e66;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+#enter
+{
+    position: relative;
+    padding:5px;
+    margin-top:10px;
+    margin-left:160px;
+    width:60px;
 }

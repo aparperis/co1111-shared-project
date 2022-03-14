@@ -38,12 +38,19 @@ let list_url='https://codecyprus.org/th/api/list';
                  listItem.textContent= item.name ;
                  listItem.href = "start.html?treasureHuntID=" + item.uuid;
                  challengeList.appendChild(listItem);
-                 challengeList.appendChild(document.createElement("br"))
+                 challengeList.appendChild(document.createElement("br"));
       }
 
 
 
 
   }
+
+
+
+
+
+
+
 
 getList();
