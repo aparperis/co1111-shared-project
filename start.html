@@ -19,7 +19,7 @@
     <p id="name-input">Enter your name:</p>
     <input type="text" id="playerName" />
     <br>
-    <input type="button" id="enter" onclick="start()" />
+    <button id="enter" onclick="start()">Begin</button>
 </div>
 <script>
 
@@ -37,8 +37,30 @@
 
         console.log(START_URL);
 
+       fetch(START_URL)
+        .then(response=> {
+            return response.json();
+        })
+        .then(data=>{
+
+            console.log(data);
+            if(data.status=== "ERROR") {
+                alert(data.errorMessages);
+            }
+            else
+            {
+                window.location.href="startGame.html";
+
+            }
+
+        })
+
     }
+
     start();
+
+
+
 
 </script>
 

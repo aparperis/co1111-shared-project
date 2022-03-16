@@ -11,42 +11,58 @@
         <h2>TREASURE HUNT</h2>
     </div>
     <div>
-
+      skip
     </div>
 </nav>
-<h1>Question 1:</h1>
  <div id="questions_div">
-
+     <div id="question">
+     </div>
+     <input type="text" id ="answer-box"/>
 
  </div>
 
 <script src="script.js">
-
-    const QUESTIONS_URL="https://codecyprus.org/th/api/question?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM";
     const params = new URLSearchParams(location.search);
     const session=params.get("session");
     console.log(session);
 
+    const QUESTIONS_URL="https://codecyprus.org/th/api/question?session" + session;
+
     async function getQuestions()
     {
-       let response=await fetch(QUESTIONS_URL);
-       let data=await response.json();
+        const res= await fetch(QUESTIONS_URL);
+        const data= await res.json();
+
+
+        console.log(data);
+
+        if(data.status === "OK" && session === params.get("session"))
+        {
+
+                let question=document.createElement("h2");
+                question.textContent=data.questionText;
+                question.href=QUESTIONS_URL;
+                let q_div=document.getElementById('question');
+                q_div.append(question);
+                q_div.append(document.createElement("br"));
 
 
 
-           let number_of_questions=document.createElement("p");
-           number_of_questions.textContent=data.numOfQuestions;
-           let num=document.getElementById("questions_div");
-           num.appendChild(number_of_questions);
-
-
-
-
-
+        }
+        else
+        {
+            alert(data.errorMessages);
+        }
 
 
     }
-  getQuestions();
+    getQuestions();
+
+
+
+
+
+
 
 
 

@@ -95,6 +95,11 @@ nav
    #social-media-section{
        top:150px;
    }
+    img
+    {
+        width:100px;
+        height:110px;
+    }
 
 }
 
@@ -120,7 +125,7 @@ nav
     text-align: center;
     position: relative;
     top: 30%;
-    font-size: 40px;
+    font-size: 30px;
 
 
 }
@@ -132,7 +137,7 @@ nav
 .button
 {
     position: relative;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     top: 30px;
     color: black;
@@ -143,7 +148,7 @@ nav
 
 .button:hover
 {
-    font-size:35px;
+    font-size:30px;
     color: #b39e66;
     transition: all 0.5s ease;
 }
@@ -157,7 +162,7 @@ nav
     text-align: center;
     height:100vh;
     width: 100%;
-    font-size: 30px;
+    font-size: 20px;
 }
 #about_h1
 {
@@ -165,13 +170,13 @@ nav
 }
 #goal_p
 {
-    font-size:40px;
+    font-size:30px;
     color: #b39e66;
 }
 .top
 {
     position: relative;
-    font-size: 20px;
+    font-size: 15px;
     padding:5px;
     border:2px solid #b39e66;
     font-weight: bold;
@@ -193,7 +198,7 @@ nav
 
 #team-section
 {
-    font-size: 30px;
+    font-size: 20px;
     position: relative;
     text-align: center;
     height:150vh;
@@ -238,7 +243,7 @@ img
    position: relative;
     color:#212326;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
 }
 .email_address:hover
 {
@@ -248,7 +253,7 @@ img
 
 
 #social-media-section{
-    font-size: 30px;
+    font-size: 20px;
     position: relative;
     text-align: center;
     height:80vh;
@@ -291,7 +296,7 @@ img
     float:left;
     padding:20px;
     top:10px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .column_2
@@ -302,7 +307,7 @@ img
     top:10px;
 }
 .column_2 h4{
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #Twitter{
@@ -320,7 +325,7 @@ img
 {
     color: white;
     padding: 5px;
-    font-size:15px;
+    font-size:10px;
 }
 
 .back_btn
@@ -354,7 +359,7 @@ img
 
 #challenges
 {
-    font-size:20px;
+    font-size:15px;
     font-weight: bold;
     text-align: center;
     position:relative;
