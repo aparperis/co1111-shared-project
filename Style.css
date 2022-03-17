@@ -43,7 +43,7 @@ nav
     height: 92vh;
     top: 40px;
     background-color:#212326;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     width: 30%;
@@ -89,6 +89,12 @@ nav
     {
         display: block;
         cursor: pointer;
+    }
+
+    .nav-items-drop
+    {
+        display:flex;
+
     }
    /* .nav-items{
         position: absolute;
