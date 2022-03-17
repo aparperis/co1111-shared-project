@@ -39,12 +39,17 @@
         if(data.status === "OK" && session === params.get("session"))
         {
 
+            for(let q=data.questionText; q < data.questionText-1; q++)
+            {
                 let question=document.createElement("h2");
                 question.textContent=data.questionText;
                 question.href=QUESTIONS_URL;
                 let q_div=document.getElementById('question');
                 q_div.append(question);
                 q_div.append(document.createElement("br"));
+
+            }
+
 
 
 

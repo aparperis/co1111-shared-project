@@ -35,6 +35,29 @@ nav
     letter-spacing:1px;
 }
 
+
+.nav-items-drop
+{
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 40px;
+    background-color:#212326;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    transform: translateX(0%); /*This will make this menu move in and out the screen*/
+    z-index: 1;
+
+}
+
+.nav-items-drop a
+
+{
+    color:#dfe6e4;
+    letter-spacing:1px;
+}
 .nav-items a:hover
 {
     color: #b39e66;
@@ -67,7 +90,7 @@ nav
         display: block;
         cursor: pointer;
     }
-    .nav-items{
+   /* .nav-items{
         position: absolute;
         right: 0px;
         height: 92vh;
@@ -78,8 +101,9 @@ nav
         align-items: center;
         width: 30%;
         transform: translateX(100%); /*This will make this menu move in and out the screen*/
-        z-index: 1;
+  /*      z-index: 1;
     }
+     */
 
     .column_1, .column_2
     {
