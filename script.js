@@ -5,7 +5,7 @@ function navTransition()
 
     if(nav.style.display=== "none")
     {
-        nav.style.display="flex";
+        nav.style.display="block";
 
     }
     else
