@@ -19,7 +19,7 @@ nav
 
 .Logo{
     color:#b39e66;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .nav-items
@@ -128,8 +128,8 @@ nav
    }
     img
     {
-        width:100px;
-        height:110px;
+        width:80px;
+        height:85px;
     }
 
 }
@@ -282,6 +282,19 @@ img
     transition: all 0.6s ease;
 }
 
+.role
+{
+    font-weight: bold;
+    font-size:15px;
+
+
+}
+.role p{
+    color:#b39e66;
+    font-size: 20px;
+}
+
+
 
 #social-media-section{
     font-size: 20px;
@@ -372,20 +385,16 @@ img
 
 #chall-H1
 {
-    position: absolute;
+
     text-align: center;
     color: #b39e66;
     top:60px;
 }
 #myDiv{
-    position: absolute;
+    position: relative;
     padding: 10px;
-    height:50vh;
-    margin-left:20px;
-    margin-right: 20px;
+    height:30vh;
     margin-top:30px;
-    align-items: center;
-
 }
 
 
@@ -409,6 +418,17 @@ img
     transition: all 0.5s ease;
 }
 
+
+#name-input
+{
+    color:#b39e66;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
 #playerName
 {
     position: relative;
@@ -418,31 +438,41 @@ img
     padding: 10px;
 }
 
+
 #register
 {
     background-color: lightgray;
-    position:relative;
+    position: relative;
     padding: 10px;
+    height:30vh;
     margin-top:30px;
-    width:50vh;
-    height:60vh;
-    margin-left:80vh;
+
 }
 
-#name-input
+#box-id
 {
-    color:#b39e66;
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
+    position: relative;
+    padding: 10px;
+    height:30vh;
+    margin-top:30px;
+    width: auto;
 
 }
+
+
 
 #enter
 {
     position: relative;
-    padding:5px;
+    padding:10px;
     margin-top:10px;
-    margin-left:160px;
-    width:60px;
+    width:65px;
+    border-radius:8px;
+    font-weight: bold;
+}
+#enter:hover
+{
+
+    color: #b39e66;
+
 }
