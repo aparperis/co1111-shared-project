@@ -150,7 +150,7 @@ nav
          width: 95%; */
         position: relative;
         text-align: center;
-        height:180vh;
+        height:150vh;
         width: 100%;
         font-size: 20px;
 
@@ -242,14 +242,25 @@ nav
     font-size:30px;
     color: #b39e66;
 }
-.top
+.top a
 {
-    position: relative;
+   /* position: fixed;
     font-size: 15px;
     padding:5px;
     border:2px solid #b39e66;
     font-weight: bold;
     border-radius: 8px;
+    left:10px; */
+    border:2px solid #34516C;
+    padding:10px;
+    position:fixed;
+    top:50%;
+    left:0px;
+    border-radius:10px;
+    font-size:10px;
+    background-color:#34516C;
+    color:white;
+    font-weight: bold;
 
 
 }
@@ -264,7 +275,11 @@ nav
 }
 
 
+#tsec{
 
+
+    position:absolute;
+}
 #team-section
 {
    /* font-size: 20px;
@@ -274,7 +289,7 @@ nav
     width: 95%; */
     position: relative;
     text-align: center;
-    height:100vh;
+    height:150vh;
     width: 100%;
     font-size: 20px;
    
@@ -340,17 +355,19 @@ img
 
 #social-media-section{
     font-size: 20px;
-  /*  position: relative;*/
+    position: relative;
     text-align: center;
-    height:50vh;
+    height:80vh;
     width: 100%;
-    margin-top:100px;
+    margin-top:80px;
+    background-color: #b39e66;
+
 
 
 }
 #social-media-section h1
 {
-    color:#b39e66 ;
+    color:#212326 ;
 }
 
 .insta-links a
@@ -359,7 +376,7 @@ img
 }
 .insta-links a:hover
 {
-    color: #b39e66;
+    color: #dfe6e4;
     transition: all 0.6s ease;
 }
 
@@ -468,7 +485,7 @@ img
     position: relative;
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
 
 }
 
