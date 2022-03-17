@@ -454,16 +454,18 @@ img
 
 #chall-H1
 {
-
+    position: relative;
     text-align: center;
     color: #b39e66;
-    top:60px;
+    top:50px;
 }
 #myDiv{
     position: relative;
     padding: 10px;
-    height:30vh;
-    margin-top:30px;
+    height:50vh;
+    top:50px;
+    background-color: lightgray;
+
 }
 
 

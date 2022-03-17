@@ -100,7 +100,7 @@ async function getQuestions()
 
     console.log(data);
 
-    if(data.status === "OK" && session === session_params.get("session"))
+    if(data.status === "OK" && data.session === session_params.get("session"))
     {
 
         for(let q=0; q < data.numOfQuestions-1; q++)
