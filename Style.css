@@ -280,7 +280,7 @@ nav
 
     position: relative;
     text-align: center;
-    height:130vh;
+    height:150vh;
     width: 100%;
     font-size: 20px;
    
@@ -378,9 +378,15 @@ img
     position:absolute;
     height:auto;
     display: flex;
+    top:40px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-left: 50px;
+    flex-direction: column;
+    margin-left: 80px;
+    background-color: grey;
+
+    padding:10px;
+
 }
 
 
@@ -496,7 +502,7 @@ img
 {
     position: relative;
     border-radius: 8px;
-    margin-left:75px;
+
     margin-top:30px;
     padding: 10px;
 }
@@ -508,7 +514,11 @@ img
     position: relative;
     padding: 10px;
     height:30vh;
-    margin-top:30px;
+    margin-top:20px;
+    text-align: center;
+   /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
 
 }
 
@@ -516,9 +526,10 @@ img
 {
     position: relative;
     padding: 10px;
-    height:30vh;
-    margin-top:30px;
-    width: auto;
+    height:50vh;
+    margin-top:10px;
+    text-align: center;
+
 
 }
 
@@ -529,7 +540,7 @@ img
     position: relative;
     padding:10px;
     margin-top:10px;
-    width:65px;
+    width:70px;
     border-radius:8px;
     font-weight: bold;
 }
