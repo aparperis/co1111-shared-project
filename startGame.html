@@ -26,10 +26,12 @@
     const session=params.get("session");
     console.log(session);
 
-    const QUESTIONS_URL="https://codecyprus.org/th/api/question?session" + session;
+
 
     async function getQuestions()
     {
+        const QUESTIONS_URL="https://codecyprus.org/th/api/question?session" + session;
+
         const res= await fetch(QUESTIONS_URL);
         const data= await res.json();
 
@@ -39,18 +41,16 @@
         if(data.status === "OK" && session === params.get("session"))
         {
 
-            for(let q=data.questionText; q < data.questionText-1; q++)
+            for(let q=0; q < data.numOfQuestions-1; q++)
             {
                 let question=document.createElement("h2");
                 question.textContent=data.questionText;
-                question.href=QUESTIONS_URL;
+                //question.href=QUESTIONS_URL;
                 let q_div=document.getElementById('question');
                 q_div.append(question);
                 q_div.append(document.createElement("br"));
 
             }
-
-
 
 
         }
@@ -62,13 +62,6 @@
 
     }
     getQuestions();
-
-
-
-
-
-
-
 
 
 </script>

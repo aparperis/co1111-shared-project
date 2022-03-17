@@ -1,16 +1,16 @@
 function navTransition()
 {
-    const b_menu=document.querySelector('.hamburger-menu');
-    const nav=document.querySelector('.nav-items');
+    //const b_menu=document.querySelector('.hamburger-menu');
+    const nav=document.querySelector('.nav-items-drop');
 
-    if(nav.style.transform==="translateX(100%)")
+    if(nav.style.display=== "none")
     {
-        nav.style.transform="translateX(0%)";
-        nav.style.transition="transform 0.5s ease-in" ;
+        nav.style.display="flex";
+
     }
     else
     {
-        nav.style.transform="translateX(100%)";
+        nav.style.display="none";
 
     }
 }
@@ -38,6 +38,8 @@ let list_url='https://codecyprus.org/th/api/list';
                  listItem.textContent= item.name ;
                  listItem.href = "start.html?treasureHuntID=" + item.uuid;
                  challengeList.appendChild(listItem);
+                 challengeList.append(document.createElement("br"));
+                 challengeList.append(document.createElement("br"));
                  challengeList.append(document.createElement("br"));
       }
 

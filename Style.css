@@ -91,11 +91,12 @@ nav
         cursor: pointer;
     }
 
-    .nav-items-drop
-    {
-        display:flex;
 
+    .nav-items{
+
+        display:none;
     }
+
    /* .nav-items{
         position: absolute;
         right: 0px;
@@ -371,18 +372,19 @@ img
 
 #chall-H1
 {
-
+    position: absolute;
     text-align: center;
     color: #b39e66;
     top:60px;
 }
 #myDiv{
-    position: relative;
+    position: absolute;
     padding: 10px;
     height:50vh;
     margin-left:20px;
     margin-right: 20px;
-    margin-top:20px;
+    margin-top:30px;
+    align-items: center;
 
 }
 
