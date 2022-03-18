@@ -82,9 +82,6 @@ function start()
 }
 
 
-
-
-
 async function getQuestions()
 {
 
@@ -101,21 +98,22 @@ async function getQuestions()
 
     console.log(data);
 
-    if(data.status === "OK") {
+    if(data.status === "OK" ) {
 
         let question = document.createElement("p");
         question.innerHTML = data.questionText;
-        //question.href=QUESTIONS_URL;
         let q_div = document.getElementById("question");
         q_div.append(question);
         q_div.append(document.createElement("br"));
 
         const input = document.getElementById("answer-box").value;
+        const type=data.questionType;
 
-        const q_num=data.currentQuestionIndex;
+        if(input.innerText === type && type === "INTEGER")
+        {
 
-        answer();
-
+            answer();
+        }
 
     }
     else
@@ -146,9 +144,9 @@ async function answer() {
 
     if(input.innerText === answer_params)
     {
-       alert(data.messages);
+       alert(data.message);
 
-        getQuestions();
+
     }
 
     console.log(data);
