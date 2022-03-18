@@ -171,6 +171,15 @@ nav
         width: 100%;
         margin-top:100px;
     }
+    #register {
+        background-color: lightgray;
+        position: relative;
+        padding: 10px;
+        height: 50vh;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+    }
 }
 
 
@@ -550,5 +559,14 @@ img
 {
 
     color: #b39e66;
+
+}
+
+#questions_div
+{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    top:40px;
 
 }

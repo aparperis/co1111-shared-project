@@ -45,8 +45,6 @@ let list_url='https://codecyprus.org/th/api/list';
 
   }
 
-getList();
-
 const id_params = new URLSearchParams(location.search);
 const treasureHuntID = id_params.get("treasureHuntID");
 
@@ -73,8 +71,9 @@ function start()
             }
             else
             {
+                setCookie("sessionID", data.session, 30);
                 window.location.href="startGame.html";
-                console.log(session);
+                console.log(data.session);
 
             }
 
@@ -82,37 +81,35 @@ function start()
 
 }
 
-start();
 
-const session_params = new URLSearchParams(location.search);
-const session=session_params.get("session");
-console.log(session);
 
 
 
 async function getQuestions()
 {
-    const QUESTIONS_URL="https://codecyprus.org/th/api/question?session" + session;
 
-    const res= await fetch(QUESTIONS_URL);
-    const data= await res.json();
+    const session=sessionID;
+    console.log(session);
+
+
+
+    const QUESTIONS_URL="https://codecyprus.org/th/api/question?session=" + session;
+
+    const response= await fetch(QUESTIONS_URL);
+    const data= await response.json();
 
 
     console.log(data);
 
-    if(data.status === "OK" && data.session === session_params.get("session"))
+    if(data.status === "OK")
     {
 
-        for(let q=0; q < data.numOfQuestions-1; q++)
-        {
-            let question=document.createElement("h2");
-            question.textContent=data.questionText;
+            let question=document.createElement("p");
+            question.innerHTML=data.questionText;
             //question.href=QUESTIONS_URL;
-            let q_div=document.getElementById('question');
+            let q_div=document.getElementById("question");
             q_div.append(question);
             q_div.append(document.createElement("br"));
-
-        }
 
 
     }
@@ -123,7 +120,9 @@ async function getQuestions()
 
 
 }
-getQuestions();
 
+function answer() {
+
+}
 
 

@@ -20,8 +20,11 @@
      <input type="text" id ="answer-box"/>
 
  </div>
+<script src="cookies.js"></script>
+<script src="script.js"></script>
+<script >
+    let sessionID = getCookie("sessionID");
 
-<script src="script.js">
     getQuestions();
     /*
     const params = new URLSearchParams(location.search);
