@@ -88,8 +88,6 @@ async function getQuestions()
     const session=sessionID;
     console.log(session);
 
-
-
     const QUESTIONS_URL="https://codecyprus.org/th/api/question?session=" + session;
 
     const response= await fetch(QUESTIONS_URL);
@@ -98,7 +96,8 @@ async function getQuestions()
 
     console.log(data);
 
-    if(data.status === "OK" ) {
+    if(data.status === "OK")
+    {
 
         let question = document.createElement("p");
         question.innerHTML = data.questionText;
@@ -109,11 +108,9 @@ async function getQuestions()
         const input = document.getElementById("answer-box").value;
         const type=data.questionType;
 
-        if(input.innerText === type && type === "INTEGER")
-        {
+        const curr=data.currentQuestionIndex;
 
-            answer();
-        }
+        answer();
 
     }
     else
@@ -126,35 +123,46 @@ async function getQuestions()
 
 
 
-async function answer() {
+async function answer()
+{
 
     const session=sessionID;
+    const answer_param=new URLSearchParams(location.search);
+    const answers = answer_param.get("answer");
 
-    const params=new URLSearchParams(location.search);
-    const answer_params = params.get("answer");
 
-    const ANSWER_URL="https://codecyprus.org/th/api/answer?session=" + session +"&answer=" + answer_params;
+    console.log(session);
+    console.log(answers);
+
+
+    /* https://codecyprus.org/th/api/answer?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM&answer=42  */
+    const ANSWER_URL="https://codecyprus.org/th/api/answer?session=" + session  + "&answer=" + answers;
 
     const response=await fetch(ANSWER_URL);
     const data=await response.json();
 
-
+    const correct=data.correct;
 
     const input = document.getElementById("answer-box").value;
+    const score=data.scoreAdjustment;
 
-    if(input.innerText === answer_params)
+    if(input.innerText == answers && correct==="true" )
     {
-       alert(data.message);
+           alert(data.message);
+           const scr=document.getElementById("score");
+           scr.innerHTML=score;
+            getQuestions();
+
 
 
     }
+    else
+    {
+        alert(data.message);
+    }
+
 
     console.log(data);
-
-
-
-
-
 
 
 
