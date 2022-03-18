@@ -101,15 +101,20 @@ async function getQuestions()
 
     console.log(data);
 
-    if(data.status === "OK")
-    {
+    if(data.status === "OK") {
 
-            let question=document.createElement("p");
-            question.innerHTML=data.questionText;
-            //question.href=QUESTIONS_URL;
-            let q_div=document.getElementById("question");
-            q_div.append(question);
-            q_div.append(document.createElement("br"));
+        let question = document.createElement("p");
+        question.innerHTML = data.questionText;
+        //question.href=QUESTIONS_URL;
+        let q_div = document.getElementById("question");
+        q_div.append(question);
+        q_div.append(document.createElement("br"));
+
+        const input = document.getElementById("answer-box").value;
+
+        const q_num=data.currentQuestionIndex;
+
+        answer();
 
 
     }
@@ -121,7 +126,39 @@ async function getQuestions()
 
 }
 
-function answer() {
+
+
+async function answer() {
+
+    const session=sessionID;
+
+    const params=new URLSearchParams(location.search);
+    const answer_params = params.get("answer");
+
+    const ANSWER_URL="https://codecyprus.org/th/api/answer?session=" + session +"&answer=" + answer_params;
+
+    const response=await fetch(ANSWER_URL);
+    const data=await response.json();
+
+
+
+    const input = document.getElementById("answer-box").value;
+
+    if(input.innerText === answer_params)
+    {
+       alert(data.messages);
+
+        getQuestions();
+    }
+
+    console.log(data);
+
+
+
+
+
+
+
 
 }
 

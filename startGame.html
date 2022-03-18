@@ -17,13 +17,18 @@
  <div id="questions_div">
      <div id="question">
      </div>
-     <input type="text" id ="answer-box"/>
+     <input type="text" id ="answer-box"/><br><br>
+     <button id="submit-btn" onclick="answer()">SUBMIT</button>
 
  </div>
+<div id="a_message">
+
+</div>
 <script src="cookies.js"></script>
 <script src="script.js"></script>
 <script >
     let sessionID = getCookie("sessionID");
+
 
     getQuestions();
     /*
@@ -70,5 +75,6 @@
 */
 
 </script>
+
 </body>
 </html>
