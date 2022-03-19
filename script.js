@@ -99,18 +99,25 @@ async function getQuestions()
     if(data.status === "OK")
     {
 
+
         let question = document.createElement("p");
         question.innerHTML = data.questionText;
         let q_div = document.getElementById("question");
         q_div.append(question);
         q_div.append(document.createElement("br"));
 
-        const input = document.getElementById("answer-box").value;
-        const type=data.questionType;
+            const input = document.getElementById("answer-box").value;
+            const type=data.questionType;
 
-        const curr=data.currentQuestionIndex;
+            if(type === "INTEGER" || type === "BOOLEAN" || type === "NUMERIC" || type=== "MCQ"|| type === "TEXT")
+            {
 
-        answer();
+                    await answer();
+
+
+
+            }
+
 
     }
     else
@@ -118,17 +125,16 @@ async function getQuestions()
         alert(data.errorMessages);
     }
 
-
 }
-
 
 
 async function answer()
 {
 
     const session=sessionID;
-    const answer_param=new URLSearchParams(location.search);
+    const answer_param=new URLSearchParams("https://codecyprus.org/th/api/answer?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM&answer=42 ");
     const answers = answer_param.get("answer");
+
 
 
     console.log(session);
@@ -136,30 +142,39 @@ async function answer()
 
 
     /* https://codecyprus.org/th/api/answer?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM&answer=42  */
-    const ANSWER_URL="https://codecyprus.org/th/api/answer?session=" + session  + "&answer=" + answers;
 
-    const response=await fetch(ANSWER_URL);
-    const data=await response.json();
 
-    const correct=data.correct;
+         const ANSWER_URL="https://codecyprus.org/th/api/answer?session=" + session  + "&answer=" + answers;
+
+         const response=await fetch(ANSWER_URL);
+         const data=await response.json();
+
+         const correct=data.correct;
 
     const input = document.getElementById("answer-box").value;
     const score=data.scoreAdjustment;
 
-    if(input.innerText == answers && correct==="true" )
+    if(input === answers && correct==="true"  && data.status ==="OK")
     {
-           alert(data.message);
-           const scr=document.getElementById("score");
-           scr.innerHTML=score;
-            getQuestions();
 
-
-
-    }
-    else
-    {
+        data.correct === "true";
         alert(data.message);
+
+        if(correct === "true")
+        {
+            await getQuestions();
+        }
+
+
     }
+         // else
+         // {
+         //     alert(data.message);
+         //
+         // }
+
+
+
 
 
     console.log(data);
