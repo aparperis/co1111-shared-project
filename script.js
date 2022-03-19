@@ -100,23 +100,21 @@ async function getQuestions()
     {
 
 
-        let question = document.createElement("p");
-        question.innerHTML = data.questionText;
-        let q_div = document.getElementById("question");
-        q_div.append(question);
-        q_div.append(document.createElement("br"));
+         let question = document.createElement("h3");
+         question.innerHTML = data.questionText;
+         let q_div = document.getElementById("question");
+         q_div.append(question);
+         q_div.append(document.createElement("br"));
 
-            const input = document.getElementById("answer-box").value;
-            const type=data.questionType;
-
-            if(type === "INTEGER" || type === "BOOLEAN" || type === "NUMERIC" || type=== "MCQ"|| type === "TEXT")
-            {
-
-                    await answer();
+         const input = document.getElementById("answer-box").value;
+         const type=data.questionType;
+         const s_btn=document.getElementById("submit-btn");
 
 
 
-            }
+
+
+
 
 
     }
@@ -131,50 +129,47 @@ async function getQuestions()
 async function answer()
 {
 
-    const session=sessionID;
-    const answer_param=new URLSearchParams("https://codecyprus.org/th/api/answer?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM&answer=42 ");
-    const answers = answer_param.get("answer");
+    const session = sessionID;
 
+    const answer_param = new URLSearchParams("https://codecyprus.org/th/api/answer?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM&answer=42 ");
+    const answers = answer_param.get("answer");
+    console.log(answers);
 
 
     console.log(session);
-    console.log(answers);
+
 
 
     /* https://codecyprus.org/th/api/answer?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM&answer=42  */
 
 
-         const ANSWER_URL="https://codecyprus.org/th/api/answer?session=" + session  + "&answer=" + answers;
+    const ANSWER_URL = "https://codecyprus.org/th/api/answer?session=" + session + "&answer=" + answers;
 
-         const response=await fetch(ANSWER_URL);
-         const data=await response.json();
+    const response = await fetch(ANSWER_URL);
+    const data = await response.json();
 
-         const correct=data.correct;
+    const correct = data.correct;
 
-    const input = document.getElementById("answer-box").value;
-    const score=data.scoreAdjustment;
 
-    if(input === answers && correct==="true"  && data.status ==="OK")
+    let input = document.getElementById("answer-box").value;
+    const score = data.scoreAdjustment;
+
+    const s_btn = document.getElementById("submit-btn");
+
+    if (input === answers )
     {
-
         data.correct === "true";
-        alert(data.message);
 
         if(correct === "true")
         {
             await getQuestions();
+
+
         }
 
 
+
     }
-         // else
-         // {
-         //     alert(data.message);
-         //
-         // }
-
-
-
 
 
     console.log(data);
