@@ -33,48 +33,7 @@
 
 
     getQuestions();
-    /*
-    const params = new URLSearchParams(location.search);
-    const session=params.get("session");
-    console.log(session);
 
-
-
-    async function getQuestions()
-    {
-        const QUESTIONS_URL="https://codecyprus.org/th/api/question?session" + session;
-
-        const res= await fetch(QUESTIONS_URL);
-        const data= await res.json();
-
-
-        console.log(data);
-
-        if(data.status === "OK" && session === params.get("session"))
-        {
-
-            for(let q=0; q < data.numOfQuestions-1; q++)
-            {
-                let question=document.createElement("h2");
-                question.textContent=data.questionText;
-                //question.href=QUESTIONS_URL;
-                let q_div=document.getElementById('question');
-                q_div.append(question);
-                q_div.append(document.createElement("br"));
-
-            }
-
-
-        }
-        else
-        {
-            alert(data.errorMessages);
-        }
-
-
-    }
-    getQuestions();
-*/
 
 </script>
 

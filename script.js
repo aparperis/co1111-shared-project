@@ -96,8 +96,9 @@ async function getQuestions()
 
     console.log(data);
 
-    if(data.status === "OK")
+    if(data.status === "OK" )
     {
+
 
 
          let question = document.createElement("h3");
@@ -109,13 +110,23 @@ async function getQuestions()
          const input = document.getElementById("answer-box").value;
          const type=data.questionType;
          const s_btn=document.getElementById("submit-btn");
+         let current=data.currentQuestionIndex;
+
+         console.log(current);
+
+        const ans= getCookie("answer");
 
 
+            console.log(ans);
 
 
+            if(ans === input && ans.value === type)
+            {
 
+               await getQuestions();
+                await answer();
 
-
+            }
 
     }
     else
@@ -133,11 +144,10 @@ async function answer()
 
     const answer_param = new URLSearchParams("https://codecyprus.org/th/api/answer?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM&answer=42 ");
     const answers = answer_param.get("answer");
-    console.log(answers);
+
 
 
     console.log(session);
-
 
 
     /* https://codecyprus.org/th/api/answer?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM&answer=42  */
@@ -156,20 +166,23 @@ async function answer()
 
     const s_btn = document.getElementById("submit-btn");
 
-    if (input === answers )
-    {
-        data.correct === "true";
 
-        if(correct === "true")
-        {
-            await getQuestions();
+         setCookie("answer", input, 30);
+
+         if (input === answers && correct === "true" && data.status === "OK")
+         {
 
 
-        }
+             await getQuestions();
+
+         }
+         else
+         {
+             alert(data.message);
+         }
 
 
 
-    }
 
 
     console.log(data);
