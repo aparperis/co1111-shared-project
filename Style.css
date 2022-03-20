@@ -580,11 +580,14 @@ img
 
 }
 
-#score
+#score-div p
 {
-    color:#212326;
+    color:#b39e66;
     font-size: 15px;
     font-weight: bold;
+    position: relative;
+    left: 5px;
+    top:5px;
 }
 
 #answer-box
@@ -626,9 +629,10 @@ img
     font-weight: bold;
     border: 0;
 }
-#skip
+#skip:hover
 {
     color: #b39e66;
+    transition: 0.5s ease;
 
 }
 
