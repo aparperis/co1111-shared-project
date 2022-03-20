@@ -110,16 +110,30 @@ async function getQuestions()
             let answerElement=document.getElementById("answer-box");
             let ans = answerElement.value;
 
-
+            let skip_btn=document.getElementById("skip");
 
             if(ans === data.questionType)
             {
                 await answer();
             }
+
+            if(data.canBeSkipped === true)
+            {
+               skip_btn.style.display="flex";
+
+
+            }
+            else
+            {
+                skip_btn.style.display="none";
+            }
+
+
         }
+        else
+        {
 
-
-
+        }
 
     }
     else
@@ -179,7 +193,7 @@ async function answer()
     //
     //
     // console.log(data);
-    const session = sessionID;
+
 
     let answerElement=document.getElementById("answer-box");
     let answer = answerElement.value;
@@ -190,27 +204,50 @@ async function answer()
     const data = await response.json();
 
     let correct=data.correct;
+   if(data.status === "OK")
+   {
+       if(answer === correct && correct===true)
+       {
 
-    if(answer === correct && correct==="true")
-    {
+           if(data.completed === false)
+           {
+               alert(data.message);
+               await getQuestions();
+           }
+           else
+           {
+               window.location.href="leaderboard.html";
+           }
 
-        if(data.completed === "false")
-        {
-            alert(data.message);
-            await getQuestions();
-        }
-        else
-        {
-            window.location.href="leaderboard.html";
-        }
+       }
+       else
+       {
+           alert(data.message);
+       }
+   }
 
 
 
-    }
-    else
-    {
-        alert(data.message);
-    }
+
+
+
+}
+
+async function Skip()
+{
+
+    const SKIP_URL="https://codecyprus.org/th/api/skip?session=" + sessionID;
+    const response=await fetch(SKIP_URL);
+    const data=await response.json();
+
+   if(data.status==="OK")
+   {
+
+       alert(data.message);
+       await getQuestions();
+   }
+
+
 
 
 

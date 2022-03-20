@@ -19,8 +19,15 @@ nav
 
 .Logo{
     color:#b39e66;
-    font-size: 12px;
+    font-size: 10px;
 }
+.Logo h2
+{
+    font-size: 20px;
+    position: relative;
+
+}
+
 
 .nav-items
 {
@@ -92,7 +99,10 @@ nav
         display: block;
         cursor: pointer;
     }
-
+   .Logo h2
+   {
+       font-size:15px;
+   }
 
     .nav-items{
 
@@ -572,13 +582,17 @@ img
 
 #score
 {
-    color:#dfe6e4;
-    font-size: 10px;
+    color:#212326;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 #answer-box
 {
     border-radius: 8px;
+    padding: 5px;
+    font-weight: bold;
+    color: #b39e66;
 }
 
 #submit-btn
@@ -598,4 +612,23 @@ img
 {
     background-color: lightgray;
     height:180px;
+    margin:10px;
+    border-radius: 8px;
+    padding:5px;
+    box-shadow: 10px 10px 8px grey;
 }
+
+#skip
+{
+    color: #dfe6e4;
+    background-color: #212326;
+    padding: 5px;
+    font-weight: bold;
+    border: 0;
+}
+#skip
+{
+    color: #b39e66;
+
+}
+
