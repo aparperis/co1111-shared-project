@@ -107,26 +107,15 @@ async function getQuestions()
          q_div.append(question);
          q_div.append(document.createElement("br"));
 
-         const input = document.getElementById("answer-box").value;
+
          const type=data.questionType;
          const s_btn=document.getElementById("submit-btn");
          let current=data.currentQuestionIndex;
 
          console.log(current);
 
-        const ans= getCookie("answer");
 
-
-            console.log(ans);
-
-
-            if(ans === input && ans.value === type)
-            {
-
-               await getQuestions();
-                await answer();
-
-            }
+         await answer();
 
     }
     else
@@ -140,52 +129,84 @@ async function getQuestions()
 async function answer()
 {
 
+    // const session = sessionID;
+    //
+    // const answer_param = new URLSearchParams("https://codecyprus.org/th/api/answer?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM&answer=42 ");
+    // const answers = answer_param.get("answer");
+    //
+    //
+    //
+    // console.log(session);
+    //
+    //
+    // /* https://codecyprus.org/th/api/answer?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM&answer=42  */
+    //
+    //
+    // const ANSWER_URL = "https://codecyprus.org/th/api/answer?session=" + session + "&answer=" + answers;
+    //
+    // const response = await fetch(ANSWER_URL);
+    // const data = await response.json();
+    //
+    // const correct = data.correct;
+    //
+    //
+    // let input = document.getElementById("answer-box").value;
+    // const score = data.scoreAdjustment;
+    //
+    // const s_btn = document.getElementById("submit-btn");
+    //
+    //
+    //      setCookie("answer", input, 30);
+    //
+    //      if (input === answers && correct === "true" && data.status === "OK")
+    //      {
+    //
+    //
+    //          await getQuestions();
+    //
+    //      }
+    //      else
+    //      {
+    //          alert(data.message);
+    //      }
+    //
+    //
+    //
+    //
+    //
+    // console.log(data);
     const session = sessionID;
 
-    const answer_param = new URLSearchParams("https://codecyprus.org/th/api/answer?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM&answer=42 ");
-    const answers = answer_param.get("answer");
+    let answerElement=document.getElementById("answer-box");
+    let answer = answerElement.value;
 
+    let ANSWER_URL="https://codecyprus.org/th/api/answer?session=" + sessionID + "&answer=" + answer;
 
-
-    console.log(session);
-
-
-    /* https://codecyprus.org/th/api/answer?session=ag9nfmNvZGVjeXBydXNvcmdyFAsSB1Nlc3Npb24YgICAoMa0gQoM&answer=42  */
-
-
-    const ANSWER_URL = "https://codecyprus.org/th/api/answer?session=" + session + "&answer=" + answers;
-
-    const response = await fetch(ANSWER_URL);
+    const response= await fetch(ANSWER_URL);
     const data = await response.json();
 
-    const correct = data.correct;
+    let correct=data.correct;
 
+    if(answer === correct && correct==="true")
+    {
 
-    let input = document.getElementById("answer-box").value;
-    const score = data.scoreAdjustment;
-
-    const s_btn = document.getElementById("submit-btn");
-
-
-         setCookie("answer", input, 30);
-
-         if (input === answers && correct === "true" && data.status === "OK")
-         {
-
-
-             await getQuestions();
-
-         }
-         else
-         {
-             alert(data.message);
-         }
+        if(data.completed === "false")
+        {
+            alert(data.message);
+            await getQuestions();
+        }
+        else
+        {
+            window.location.href="leaderboard.html";
+        }
 
 
 
-
-
-    console.log(data);
+    }
+    else
+    {
+        alert(data.message);
+    }
 
 
 
