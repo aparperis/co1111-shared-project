@@ -107,6 +107,7 @@ async function getQuestions()
         {
             let question = document.createElement("h3");
             question.innerHTML = data.questionText;
+            question.style.color="#212326";
             let q_div = document.getElementById("question");
             q_div.append(question);
             q_div.append(document.createElement("br"));
@@ -115,9 +116,6 @@ async function getQuestions()
             let ans = answerElement.value;
 
             let skip_btn=document.getElementById("skip");
-
-
-            await answer();
 
             if(data.canBeSkipped === true)
             {
@@ -158,15 +156,16 @@ async function getQuestions()
 async function answer()
 {
 
+    const session=sessionID;
     let answerElement=document.getElementById("answer-box");
     let answer = answerElement.value;
 
-    let ANSWER_URL="https://codecyprus.org/th/api/answer?session=" + sessionID + "&answer=" + answer;
+    let ANSWER_URL="https://codecyprus.org/th/api/answer?session=" + session + "&answer=" + answer;
 
     const response= await fetch(ANSWER_URL);
     const data = await response.json();
 
-
+    console.log(data);
 
     let correct=data.correct;
    if(data.status === "OK")
@@ -174,10 +173,13 @@ async function answer()
        if(answer === correct && correct===true)
        {
 
+           await getQuestions();
+
+
            if(data.completed === false)
            {
                alert(data.message);
-               await getQuestions();
+
 
            }
            else
@@ -218,10 +220,7 @@ async function score()
     const response = await fetch(SCORE_URL);
     const data = await response.json();
 
-    let score_div=document.getElementById("score-div");
-    let score=document.createElement("p");
-    score.textContent="SCORE: ";
-    score_div.append(score);
+
 
     if(data.status==="OK")
     {
