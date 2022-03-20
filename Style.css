@@ -575,3 +575,27 @@ img
     color:#dfe6e4;
     font-size: 10px;
 }
+
+#answer-box
+{
+    border-radius: 8px;
+}
+
+#submit-btn
+{
+    padding:5px;
+    font-weight: bold;
+    border-radius: 8px;
+
+}
+#submit-btn:hover
+{
+    font-size: 15px;
+    background-color: #b39e66;
+}
+
+#questions_div
+{
+    background-color: lightgray;
+    height:180px;
+}

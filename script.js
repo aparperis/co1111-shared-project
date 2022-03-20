@@ -96,26 +96,30 @@ async function getQuestions()
 
     console.log(data);
 
-    if(data.status === "OK" )
+    if(data.status === "OK")
     {
 
+        if(data.completed === false)
+        {
+            let question = document.createElement("h3");
+            question.innerHTML = data.questionText;
+            let q_div = document.getElementById("question");
+            q_div.append(question);
+            q_div.append(document.createElement("br"));
+
+            let answerElement=document.getElementById("answer-box");
+            let ans = answerElement.value;
 
 
-         let question = document.createElement("h3");
-         question.innerHTML = data.questionText;
-         let q_div = document.getElementById("question");
-         q_div.append(question);
-         q_div.append(document.createElement("br"));
+
+            if(ans === data.questionType)
+            {
+                await answer();
+            }
+        }
 
 
-         const type=data.questionType;
-         const s_btn=document.getElementById("submit-btn");
-         let current=data.currentQuestionIndex;
 
-         console.log(current);
-
-
-         await answer();
 
     }
     else
