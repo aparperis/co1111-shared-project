@@ -247,6 +247,7 @@ nav
         font-size: 8px;
     }
 
+
 }
 
 
@@ -521,15 +522,18 @@ img
     position: relative;
     text-align: center;
     color: #b39e66;
-    top:50px;
+    top:30px;
 }
 #myDiv{
     position: relative;
     padding: 10px;
-    height:50vh;
+    height:30vh;
     top:50px;
     background-color: lightgray;
-
+    margin-left:10px;
+    margin-right: 10px;
+    border-radius: 8px;
+    box-shadow: gray 10px 10px 8px;
 }
 
 
@@ -582,6 +586,10 @@ img
     height:30vh;
     margin-top:20px;
     text-align: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 8px;
+    box-shadow: gray 10px 10px 8px;
 
 }
 
@@ -606,6 +614,7 @@ img
     width:70px;
     border-radius:8px;
     font-weight: bold;
+    border:0;
 }
 #enter:hover
 {
@@ -628,6 +637,13 @@ img
     padding: 5px;
     font-size: 15px;
 
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select,
+    textarea,
+    input {
+        font-size: 16px;
+    }
 }
 
 #score-div
@@ -719,3 +735,5 @@ img
     margin-right: 10px;
     color: #1d9686;
 }
+
+

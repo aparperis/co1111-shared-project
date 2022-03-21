@@ -27,21 +27,24 @@ let list_url='https://codecyprus.org/th/api/list';
 
       console.log(json_data);
 
+
       let array=json_data.treasureHunts;
 
       let challengeList=document.getElementById('challenges');
 
-      for(const item of array)
-      {
 
-                 let listItem=document.createElement("a");
-                 listItem.textContent= item.name ;
-                 listItem.href = "start.html?treasureHuntID=" + item.uuid;
-                 challengeList.appendChild(listItem);
-                 challengeList.append(document.createElement("br"));
-                 challengeList.append(document.createElement("br"));
-                 challengeList.append(document.createElement("br"));
-      }
+          for (const item of array)
+          {
+
+              let listItem = document.createElement("a");
+              listItem.textContent = item.name;
+              listItem.href = "start.html?treasureHuntID=" + item.uuid;
+              challengeList.appendChild(listItem);
+              challengeList.append(document.createElement("br"));
+              challengeList.append(document.createElement("br"));
+              challengeList.append(document.createElement("br"));
+          }
+
 
   }
 
@@ -66,8 +69,13 @@ function start()
         .then(data=>{
 
             console.log(data);
-            if(data.status=== "ERROR") {
+            if(data.status=== "ERROR")
+            {
                 alert(data.errorMessages);
+
+
+
+
             }
             else
             {
@@ -216,6 +224,7 @@ async function answer()
        else
        {
            alert(data.message);
+           answerElement.value='';
        }
    }
 
@@ -354,5 +363,6 @@ async function Leaderboard()
 
 
 }
+
 
 
