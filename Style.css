@@ -340,6 +340,7 @@ nav
 {
     color: #b39e66;
     transition: all 0.6s ease;
+    cursor: pointer;
 }
 
 
@@ -493,6 +494,26 @@ img
     font-size: 15px;
 }
 
+#Twitter:hover
+{
+    color: #1DA1F2;
+    transition: 0.3s ease;
+}
+
+#Insta
+{
+    position:relative;
+    top:10px;
+    color: white;
+    font-size: 15px;
+}
+
+#Insta:hover
+{
+    color: #F56040;
+    transition: 0.3s ease;
+}
+
 .social,.contact
 {
     color:#b39e66;
@@ -502,8 +523,9 @@ img
 {
     position: relative;
     color: white;
-    font-size:15px;
+    font-size:12px;
     top:10px;
+
 }
 
 .back_btn
