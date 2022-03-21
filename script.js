@@ -120,7 +120,7 @@ async function getQuestions()
             if(data.canBeSkipped === true)
             {
                skip_btn.style.display="flex";
-               score.textContent="SCORE: " + data.skipScore;
+
 
             }
             else
