@@ -6,6 +6,10 @@
     list-style: none;
     text-decoration: none;
 }
+body{
+    min-height: 180vh;
+}
+
 
 nav
 {
@@ -93,7 +97,7 @@ nav
     body
     {
         overflow-x: hidden; /*Makes it so you cannot scroll to the right*/
-        height:80vh;
+        min-height:60vh;
     }
     .hamburger-menu
     {
@@ -138,9 +142,9 @@ nav
     #AP.AD.GA
     {
         position: relative;
-        height:100vh;
+        height:150vh;
         padding: 10px;
-        margin-left:90px;
+
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -169,8 +173,8 @@ nav
     {
         display: flex;
         justify-content:space-between;
-
         flex-wrap: wrap;
+
     }
 
     #social-media-section
@@ -238,9 +242,6 @@ nav
 }
 
 
-
-
-
 .Logo
 {
     font-size: 15px;
@@ -297,7 +298,7 @@ nav
 
     position: relative;
     text-align: center;
-    height:60vh;
+    height:80vh;
     width: 100%;
     font-size: 20px;
 }
@@ -359,8 +360,8 @@ nav
 img
 {
     border-radius: 8px;
-    width:200px;
-    height:210px;
+    width:100px;
+    height:110px;
 
 }
 .members-img
@@ -369,17 +370,16 @@ img
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
     top:25px;
-    height: 80vh;
+    height: 100vh;
 }
 
 #AD, #AP, #GA
 {
-   position: relative;
+    position: relative;
     height:50vh;
-    padding: 10px;
-    margin-left: 20px;
+
+
 
 }
 
@@ -577,9 +577,6 @@ img
     height:30vh;
     margin-top:20px;
     text-align: center;
-   /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
 
 }
 
