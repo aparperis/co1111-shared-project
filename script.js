@@ -109,13 +109,43 @@ async function getQuestions()
             q_div.append(document.createElement("br"));
 
             let answerElement=document.getElementById("answer-box");
-            let ans = answerElement.value;
+            let s_btn=document.getElementById("submit-btn");
 
             let skip_btn=document.getElementById("skip");
+            let mess=document.getElementById("a_message");
+
+            if(data.questionType === "INTEGER")
+            {
+                q_div.style.color="#bd4440";
+                answerElement.type="number";
+
+                mess.innerHTML="This question only accepts Numbers as input!"
+                mess.style.color="#bd4440";
+
+
+
+            }
+            else if(data.questionType === "BOOLEAN")
+            {
+                q_div.style.color="#1d9686";
+
+
+
+            }
+            else if(data.questionType === "MCQ")
+            {
+                q_div.style.color="#51964b";
+            }
+            else if(data.questionType === "TEXT")
+            {
+                q_div.style.color="#b068e3";
+            }
 
             if(data.canBeSkipped === true)
             {
                skip_btn.style.display="flex";
+               await score();
+               answerElement.value='';
 
 
             }
@@ -168,11 +198,14 @@ async function answer()
    {
        if(correct)
        {
+           answerElement.value='';
 
            if(data.completed === false)
            {
                alert(data.message);
                await getQuestions();
+               await score;
+
 
 
            }
@@ -187,6 +220,14 @@ async function answer()
            alert(data.message);
        }
    }
+
+}
+
+async function getLocation()
+{
+    const LOCATION_URL="https://codecyprus.org/th/api/location?session="+sessionID+"&latitude=34.683646&longitude=33.055391";
+
+
 
 }
 
@@ -219,7 +260,8 @@ async function score()
         {
             if( data.finished===false)
             {
-
+              let scoreItem=document.getElementById("score-div");
+              scoreItem.innerHTML= "SCORE: "+ data.score;
 
 
             }

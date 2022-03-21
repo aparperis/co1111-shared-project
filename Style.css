@@ -614,7 +614,15 @@ img
 
 }
 
-#score-div p
+#question
+{
+    font-weight: bold;
+    padding: 5px;
+    font-size: 15px;
+
+}
+
+#score-div
 {
     color:#b39e66;
     font-size: 15px;
@@ -650,6 +658,15 @@ img
     transition: 0.5s ease;
 }
 
+#a_message
+{
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+    text-align: center;
+
+}
+
 #questions_div
 {
     background-color: lightgray;
@@ -674,13 +691,21 @@ img
     transition: 0.5s ease;
 
 }
+#lb-h1{
+    text-align: center;
+    color: #b39e66;
+}
 
 #lb-div div{
 
     background-color: lightgray;
-}
-#lb-div h3
-{
-  font-size: 15px;
+    margin-top: 10px;
 
+}
+#lb-div h3 {
+    font-size: 15px;
+    text-align: center;
+    background-color: lightgray;
+    margin-left: 10px;
+    margin-right: 10px;
 }
