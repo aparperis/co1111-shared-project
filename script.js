@@ -7,12 +7,14 @@ function navTransition()
     {
         nav.style.display="flex";
 
+
     }
     else
     {
         nav.style.display="none";
 
     }
+
 }
 
 
@@ -349,7 +351,8 @@ async function Leaderboard()
             player.textContent="Player: " +i.player;
             score.textContent="Score: " + i.score;
             completionTime.textContent="Completion Time: " + i.completionTime;
-            lb.append(lbItems);
+
+
             lb.append(player);
             lb.append(score);
             lb.append(completionTime);
