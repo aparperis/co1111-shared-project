@@ -114,13 +114,19 @@ async function getQuestions()
             let skip_btn=document.getElementById("skip");
             let mess=document.getElementById("a_message");
 
+           if(data.requiresLocation === true)
+           {
+               await getLocation();
+           }
+           else
+           {
+
+           }
+
+
             if(data.questionType === "INTEGER")
             {
                 q_div.style.color="#bd4440";
-                answerElement.type="number";
-
-                mess.innerHTML="This question only accepts Numbers as input!"
-                mess.style.color="#bd4440";
 
 
 
@@ -131,14 +137,17 @@ async function getQuestions()
 
 
 
+
             }
             else if(data.questionType === "MCQ")
             {
                 q_div.style.color="#51964b";
+
             }
             else if(data.questionType === "TEXT")
             {
                 q_div.style.color="#b068e3";
+
             }
 
             if(data.canBeSkipped === true)
@@ -157,18 +166,7 @@ async function getQuestions()
 
 
         }
-        else
-        {
-            document.getElementById("answer-box").style.display="none";
-            let txt=document.createElement("h3");
-            txt.textContent=data.questionText;
-            let x=document.getElementById("questions_div");
-            x.append(txt);
-            let lb_btn=document.getElementById("submit-btn");
-            lb_btn.innerText="LEADERBOARD";
-            lb_btn.href="leaderboard.html";
 
-        }
 
     }
     else
@@ -223,13 +221,53 @@ async function answer()
 
 }
 
+function getPosition(pos)
+{
+    alert("Latitude: " + pos.coords.latitude + ", Longitude: " + pos.coords.longitude);
+}
+
 async function getLocation()
 {
-    const LOCATION_URL="https://codecyprus.org/th/api/location?session="+sessionID+"&latitude=34.683646&longitude=33.055391";
 
+    let session=sessionID;
+    const loc_params= new URLSearchParams(location.search);
+    const lat=loc_params.get("latitude");
+    const long=loc_params.get("longitude");
+
+    console.log(lat);
+    console.log(long);
+
+
+    const LOCATION_URL="https://codecyprus.org/th/api/location?session="+sessionID+"&latitude=" + lat +"&longitude=" + long;
+
+
+    const response= await fetch(LOCATION_URL);
+    const data=await response.json();
+    if(navigator.geolocation)
+    {
+        navigator.geolocation.getCurrentPosition(getPosition);
+
+    }
+    else
+    {
+        alert("Your browser does not support Geolocation");
+    }
+
+    console.log(data);
+
+    if(data.status === "OK")
+    {
+
+        alert(data.message);
+
+    }
 
 
 }
+
+
+
+
 
 async function Skip()
 {
@@ -299,7 +337,7 @@ async function Leaderboard()
             let score=document.createElement("h3");
             let br=document.createElement("br");
             let completionTime=document.createElement("h3");
-            player.textContent="Player: "+i.player;
+            player.textContent="Player: " +i.player;
             score.textContent="Score: " + i.score;
             completionTime.textContent="Completion Time: " + i.completionTime;
             lb.append(lbItems);
@@ -307,6 +345,7 @@ async function Leaderboard()
             lb.append(score);
             lb.append(completionTime);
             lb.append(br);
+
 
 
         }

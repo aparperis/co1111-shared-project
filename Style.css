@@ -238,6 +238,14 @@ nav
     {
         font-size: 15px;
     }
+    #lb-h1
+    {
+        font-size: 20px;
+    }
+    #lb-div h3
+    {
+        font-size: 8px;
+    }
 
 }
 
@@ -692,6 +700,7 @@ img
 
 }
 #lb-h1{
+    position: relative;
     text-align: center;
     color: #b39e66;
 }
@@ -708,4 +717,5 @@ img
     background-color: lightgray;
     margin-left: 10px;
     margin-right: 10px;
+    color: #1d9686;
 }
