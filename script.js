@@ -94,10 +94,6 @@ async function getQuestions()
     const response= await fetch(QUESTIONS_URL);
     const data= await response.json();
 
-
-
-
-
     console.log(data);
 
     if(data.status === "OK")
@@ -109,7 +105,7 @@ async function getQuestions()
             question.innerHTML = data.questionText;
             question.style.color="#212326";
             let q_div = document.getElementById("question");
-            q_div.append(question);
+            q_div.innerHTML=data.questionText;
             q_div.append(document.createElement("br"));
 
             let answerElement=document.getElementById("answer-box");
@@ -152,7 +148,6 @@ async function getQuestions()
 
 }
 
-
 async function answer()
 {
 
@@ -168,13 +163,11 @@ async function answer()
     console.log(data);
 
     let correct=data.correct;
+
    if(data.status === "OK")
    {
-       if(answer === correct && correct===true)
+       if(correct)
        {
-
-
-
 
            if(data.completed === false)
            {
@@ -194,7 +187,6 @@ async function answer()
            alert(data.message);
        }
    }
-
 
 }
 
@@ -221,24 +213,63 @@ async function score()
     const response = await fetch(SCORE_URL);
     const data = await response.json();
 
-
-
     if(data.status==="OK")
     {
-        if(data.completed=== false && data.finished===false)
+        if(data.completed=== false )
         {
+            if( data.finished===false)
+            {
+
+
+
+            }
 
 
         }
-
 
     }
 
 }
 
-async function getLocation()
+async function Leaderboard()
 {
 
+    let session=sessionID;
+
+    const LB_URL="https://codecyprus.org/th/api/leaderboard?session="+ session +"&sorted&limit=10";
+    const response=await fetch(LB_URL);
+    const data= await response.json();
+
+    console.log(data);
+
+    if(data.status==="OK")
+    {
+        let lb_array=data.leaderboard;
+        let lb=document.getElementById("lb-div");
+
+
+        for(let i of lb_array)
+        {
+            console.log(lb_array[i]);
+
+            let lbItems=document.createElement("div");
+            let player=document.createElement("h3");
+            let score=document.createElement("h3");
+            let br=document.createElement("br");
+            let completionTime=document.createElement("h3");
+            player.textContent="Player: "+i.player;
+            score.textContent="Score: " + i.score;
+            completionTime.textContent="Completion Time: " + i.completionTime;
+            lb.append(lbItems);
+            lb.append(player);
+            lb.append(score);
+            lb.append(completionTime);
+            lb.append(br);
+
+
+        }
+
+    }
 
 
 }

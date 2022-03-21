@@ -675,3 +675,12 @@ img
 
 }
 
+#lb-div div{
+
+    background-color: lightgray;
+}
+#lb-div h3
+{
+  font-size: 15px;
+
+}
