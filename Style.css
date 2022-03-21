@@ -65,7 +65,7 @@ nav
     color:#dfe6e4;
     letter-spacing:1px;
     position: relative;
-    top:20px;
+    top:10px;
 }
 .nav-items a:hover
 {
@@ -83,7 +83,7 @@ nav
 
 .hamburger-menu div {
     width: 25px;
-    height: 5px;
+    height: 3px;
     background-color:#dfe6e4;
     margin: 5px;
 }
@@ -93,11 +93,13 @@ nav
     body
     {
         overflow-x: hidden; /*Makes it so you cannot scroll to the right*/
+        height:80vh;
     }
     .hamburger-menu
     {
         display: block;
         cursor: pointer;
+
     }
    .Logo h2
    {
@@ -113,8 +115,8 @@ nav
   {
         position: absolute;
         right: 0px;
-        height: 100vh;
-        top: 30px;
+        height: 92vh;
+        top: 40px;
         background-color:#212326;
         display: none;
         justify-content: space-around;
@@ -182,7 +184,7 @@ nav
         text-align: center;
         height:70px;
         width: 100%;
-        margin-top:100px;
+        margin-top:0;
     }
     #register {
         background-color: lightgray;
@@ -218,6 +220,8 @@ nav
 
 
 
+
+
 .Logo
 {
     font-size: 15px;
@@ -227,7 +231,7 @@ nav
 {
     position:relative;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     /*background: url(th_img.jfif);*/
     /*background-size: cover;*/
     background-color: lightgray;
@@ -271,11 +275,7 @@ nav
 
 #about-section
 {
-   /* position: relative;
-    text-align: center;
-    height:100vh;
-    width: 100%;
-    font-size: 20px;*/
+
     position: relative;
     text-align: center;
     height:60vh;
@@ -323,10 +323,12 @@ nav
 
     position: relative;
     text-align: center;
-    height:150vh;
+    height:180vh;
     width: 100%;
     font-size: 20px;
-   
+    background-color: #212326;
+    color: #dfe6e4;
+
 }
 
 #team-section h1
@@ -366,7 +368,7 @@ img
 {
 
    position: relative;
-    color:#212326;
+    color:#dfe6e4;
     font-weight: bold;
     font-size: 15px;
 }
@@ -396,10 +398,8 @@ img
     text-align: center;
     height:120vh;
     width: 100%;
-    margin-top:80px;
+
     background-color: #b39e66;
-
-
 
 }
 #social-media-section h1
@@ -407,15 +407,7 @@ img
     color:#212326 ;
 }
 
-.insta-links a
-{
-    color:#212326;
-}
-.insta-links a:hover
-{
-    color: #dfe6e4;
-    transition: all 0.6s ease;
-}
+
 #feed
 {
     position:relative;
@@ -430,6 +422,11 @@ img
     padding:10px;
 
 
+}
+
+#feed a{
+    width:700px;
+    height:250px;
 }
 
 
@@ -479,9 +476,10 @@ img
 
 .email
 {
+    position: relative;
     color: white;
-    padding: 5px;
     font-size:10px;
+    top:10px;
 }
 
 .back_btn
