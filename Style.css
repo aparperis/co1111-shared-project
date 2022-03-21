@@ -200,7 +200,7 @@ nav
         position: relative;
         width:500px;
         height:250px;
-        left:10px;
+        left:0;
 
     }
     #feed
@@ -224,6 +224,15 @@ nav
     .email
     {
         font-size: 8px;
+    }
+    #about-section p
+    {
+        font-size: 15px;
+    }
+
+    #goal_p
+    {
+        font-size: 15px;
     }
 
 }
@@ -426,8 +435,6 @@ img
     top:40px;
     justify-content: center;
     flex-wrap: wrap;
-    flex-direction: column;
-    margin-left: 20px;
     border-radius: 10px;
     padding:10px;
 
