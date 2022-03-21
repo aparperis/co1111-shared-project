@@ -135,9 +135,6 @@ nav
     }
 
 
-
-
-
     #AP.AD.GA
     {
         position: relative;
@@ -214,6 +211,19 @@ nav
     #about-section
     {
         height:200px;
+    }
+    #question
+    {
+        font-size: 12px;
+
+    }
+    #Twitter
+    {
+        font-size: 10px;
+    }
+    .email
+    {
+        font-size: 8px;
     }
 
 }
@@ -467,6 +477,7 @@ img
     position:relative;
     top:10px;
     color: white;
+    font-size: 15px;
 }
 
 .social,.contact
@@ -478,7 +489,7 @@ img
 {
     position: relative;
     color: white;
-    font-size:10px;
+    font-size:15px;
     top:10px;
 }
 
@@ -622,11 +633,13 @@ img
 
 #submit-btn
 {
+    position: relative;
     padding:5px;
     font-weight: bold;
     border-radius: 8px;
     background-color: #dfe6e4;
     border: 0;
+    top:5px;
 
 }
 #submit-btn:hover

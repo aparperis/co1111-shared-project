@@ -173,12 +173,13 @@ async function answer()
        if(answer === correct && correct===true)
        {
 
-           await getQuestions();
+
 
 
            if(data.completed === false)
            {
                alert(data.message);
+               await getQuestions();
 
 
            }
