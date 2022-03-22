@@ -8,7 +8,9 @@
 }
 body{
     min-height: 180vh;
+
 }
+
 
 
 nav
@@ -24,6 +26,7 @@ nav
 .Logo{
     color:#b39e66;
     font-size: 10px;
+
 }
 .Logo h2
 {
@@ -715,6 +718,7 @@ img
     font-size: 15px;
     padding: 10px;
     text-align: center;
+    color: #F56040;
 
 }
 

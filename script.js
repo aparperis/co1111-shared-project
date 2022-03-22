@@ -17,26 +17,29 @@ function navTransition()
 
 }
 
+const id_params = new URLSearchParams(location.search);
+const treasureHuntID = id_params.get("treasureHuntID");
+
+console.log(treasureHuntID);
 
 
 let list_url='https://codecyprus.org/th/api/list';
 
-  async function getList()
-  {
-     const response=await fetch(list_url);
-     const json_data=await response.json();
+  async function getList() {
+      const response = await fetch(list_url);
+      const json_data = await response.json();
 
 
       console.log(json_data);
 
 
-      let array=json_data.treasureHunts;
+      let array = json_data.treasureHunts;
 
-      let challengeList=document.getElementById('challenges');
+      let challengeList = document.getElementById('challenges');
 
 
-          for (const item of array)
-          {
+      for (const item of array) {
+
 
               let listItem = document.createElement("a");
               listItem.textContent = item.name;
@@ -45,15 +48,12 @@ let list_url='https://codecyprus.org/th/api/list';
               challengeList.append(document.createElement("br"));
               challengeList.append(document.createElement("br"));
               challengeList.append(document.createElement("br"));
-          }
+
+
+      }
 
 
   }
-
-const id_params = new URLSearchParams(location.search);
-const treasureHuntID = id_params.get("treasureHuntID");
-
-console.log(treasureHuntID);
 
 
 function start()
@@ -88,8 +88,6 @@ function start()
         })
 
 }
-
-
 
 async function getQuestions()
 {
@@ -128,36 +126,34 @@ async function getQuestions()
            {
                await getLocation();
            }
-           else
-           {
-
-           }
-
 
 
             if(data.questionType === "INTEGER")
             {
                 q_div.style.color="#bd4440";
-
-
+                answerElement.type="number";
+                mess.textContent="NOTE: This question only accepts Numbers as input!";
 
             }
             else if(data.questionType === "BOOLEAN")
             {
                 q_div.style.color="#1d9686";
-
-
-
+                answerElement.type="text";
+                mess.textContent="";
 
             }
             else if(data.questionType === "MCQ")
             {
                 q_div.style.color="#51964b";
+                answerElement.type="text";
+                mess.textContent="";
 
             }
             else if(data.questionType === "TEXT")
             {
                 q_div.style.color="#b068e3";
+                answerElement.type="text";
+                mess.textContent="";
 
             }
 
@@ -248,12 +244,7 @@ async function getLocation()
 {
 
 
-    // const loc_params= new URLSearchParams(location.search);
-    // const lat=loc_params.get("latitude");
-    // const long=loc_params.get("longitude");
-    //
-    // console.log(lat);
-    // console.log(long);
+
 
 
     const LOCATION_URL="https://codecyprus.org/th/api/location?session="+sessionID+"&latitude=34.683646&longitude=33.055391";
