@@ -128,6 +128,10 @@ async function getQuestions()
            {
                await getLocation();
            }
+           else
+           {
+
+           }
 
 
 
@@ -244,15 +248,15 @@ async function getLocation()
 {
 
 
-    const loc_params= new URLSearchParams(location.search);
-    const lat=loc_params.get("latitude");
-    const long=loc_params.get("longitude");
+    // const loc_params= new URLSearchParams(location.search);
+    // const lat=loc_params.get("latitude");
+    // const long=loc_params.get("longitude");
+    //
+    // console.log(lat);
+    // console.log(long);
 
-    console.log(lat);
-    console.log(long);
 
-
-    const LOCATION_URL="https://codecyprus.org/th/api/location?session="+sessionID+"&latitude=" + lat +"&longitude=" + long;
+    const LOCATION_URL="https://codecyprus.org/th/api/location?session="+sessionID+"&latitude=34.683646&longitude=33.055391";
 
 
     const response= await fetch(LOCATION_URL);
