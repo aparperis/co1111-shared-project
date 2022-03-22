@@ -49,17 +49,8 @@ nav
 
 .nav-items-drop
 {
-   /* position: absolute;
-    right: 0px;
-    height: 92vh;
-    top: 50px;
-    background-color:#212326; */
+
     display: none;
-    /*
-    align-items: center;
-    justify-content: space-between;
-    width: 40%;
-    z-index: 1; */
 
 }
 
@@ -536,6 +527,10 @@ img
     font-size:12px;
     top:10px;
 
+}
+.email:hover
+{
+    color: #b39e66;
 }
 
 .back_btn

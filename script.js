@@ -76,8 +76,6 @@ function start()
                 alert(data.errorMessages);
 
 
-
-
             }
             else
             {
@@ -123,16 +121,14 @@ async function getQuestions()
             let s_btn=document.getElementById("submit-btn");
 
 
+
             let mess=document.getElementById("a_message");
 
            if(data.requiresLocation === true)
            {
                await getLocation();
            }
-           else
-           {
 
-           }
 
 
             if(data.questionType === "INTEGER")
@@ -179,6 +175,7 @@ async function getQuestions()
         else
         {
             window.location.href="leaderboard.html";
+            await Leaderboard();
         }
 
 
@@ -232,6 +229,7 @@ async function answer()
        {
            alert(data.message);
            answerElement.value='';
+           await score();
        }
    }
 
@@ -245,7 +243,7 @@ function getPosition(pos)
 async function getLocation()
 {
 
-    let session=sessionID;
+
     const loc_params= new URLSearchParams(location.search);
     const lat=loc_params.get("latitude");
     const long=loc_params.get("longitude");
@@ -263,6 +261,7 @@ async function getLocation()
     {
         navigator.geolocation.getCurrentPosition(getPosition);
 
+
     }
     else
     {
@@ -277,6 +276,7 @@ async function getLocation()
         alert(data.message);
 
     }
+
 
 
 }
