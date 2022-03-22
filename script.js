@@ -109,6 +109,7 @@ async function getQuestions()
     if(data.status === "OK")
     {
 
+        let skip_btn=document.getElementById("skip");
         if(data.completed === false)
         {
             let question = document.createElement("h3");
@@ -121,7 +122,7 @@ async function getQuestions()
             let answerElement=document.getElementById("answer-box");
             let s_btn=document.getElementById("submit-btn");
 
-            let skip_btn=document.getElementById("skip");
+
             let mess=document.getElementById("a_message");
 
            if(data.requiresLocation === true)
@@ -166,7 +167,6 @@ async function getQuestions()
                await score();
                answerElement.value='';
 
-
             }
             else
             {
@@ -176,6 +176,11 @@ async function getQuestions()
 
 
         }
+        else
+        {
+            window.location.href="leaderboard.html";
+        }
+
 
 
     }
@@ -295,6 +300,7 @@ async function Skip()
    }
 
 
+
 }
 
 async function score()
@@ -348,9 +354,10 @@ async function Leaderboard()
             let score=document.createElement("h3");
             let br=document.createElement("br");
             let completionTime=document.createElement("h3");
-            player.textContent="Player: " +i.player;
+            player.textContent="Player: " + i.player;
             score.textContent="Score: " + i.score;
             completionTime.textContent="Completion Time: " + i.completionTime;
+
 
 
             lb.append(player);
