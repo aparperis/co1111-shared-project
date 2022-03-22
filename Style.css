@@ -91,7 +91,12 @@ nav
     background-color:#dfe6e4;
     margin: 5px;
 }
-
+@media screen and (min-width: 650px)
+{
+    .nav-items-drop a{
+        display: none;
+    }
+}
 
 @media  screen and  (max-width: 650px)
 {
