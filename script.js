@@ -347,7 +347,7 @@ async function Leaderboard()
 
         for(let i of lb_array)
         {
-            console.log(lb_array[i]);
+
 
             let lbItems=document.createElement("div");
             let player=document.createElement("h3");
@@ -357,17 +357,23 @@ async function Leaderboard()
             player.textContent="Player: " + i.player;
             score.textContent="Score: " + i.score;
             completionTime.textContent="Completion Time: " + i.completionTime;
+            lbItems.append(player);
+            lbItems.append(score);
+            lbItems.append(completionTime);
 
 
-
-            lb.append(player);
-            lb.append(score);
-            lb.append(completionTime);
+            lb.append(lbItems);
             lb.append(br);
 
 
 
         }
+        let name=document.createElement("h3");
+        name.textContent=data.treasureHuntName;
+        let div=document.getElementById("th-name");
+        div.append(name);
+
+
 
     }
 
