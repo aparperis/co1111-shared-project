@@ -68,15 +68,15 @@ Made some minor changing in regards to adjust the positions of the code to be mo
 -Everyone started woking on the score API and Skip API.
 -finished the skip API.
 
-#3/21/2022
+# 3/21/2022
 -Joined a team meeting with Nicos Kasenidis to ask questions.
 -finished score API
 -Everyone started woking on the leaderboard API and location API
 
-#3/22/2022
+# 3/22/2022
 -Finished the leaderboard API and location API.
 
-#3/23/2022
+# 3/23/2022
 -Everyone started working on the test API
 
 
