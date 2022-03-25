@@ -306,9 +306,10 @@ async function getLocation()
    //Fetching the API
     const response= await fetch(LOCATION_URL);
     const data=await response.json();
-
+    //This asks the users permission to access their location
     if(navigator.geolocation)
     {
+        //Access the current position
         navigator.geolocation.getCurrentPosition(getPosition);
 
 
@@ -455,5 +456,34 @@ async function Leaderboard()
 
 }
 
+//List testing
+async function listTesting()
+{
 
+    let x=new URLSearchParams(window.location);
+    let params= x.get("number-of-ths")
+    testListURL="https://codecyprus.org/th/test-api/list?" + params;
+    const res=await fetch(testlistURL)
+    const testData=await res.json();
+
+    console.log(testData);
+
+
+
+}
+async function startTest()
+{
+    let x=new URLSearchParams(window.location);
+    let params= x.get("player");
+
+   let  start_test_url="https://codecyprus.org/th/test-api/start?" + params;
+
+    const res=await fetch(start_test_urlL)
+    const testData=await res.json();
+
+    console.log(testData);
+
+
+
+}
 
