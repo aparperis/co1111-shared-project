@@ -462,8 +462,8 @@ async function listTesting()
 
     let x=new URLSearchParams(window.location);
     let params= x.get("number-of-ths")
-    testListURL="https://codecyprus.org/th/test-api/list?" + params;
-    const res=await fetch(testlistURL)
+
+    const res=await fetch( "https://codecyprus.org/th/test-api/list?" + params)
     const testData=await res.json();
 
     console.log(testData);
@@ -476,9 +476,9 @@ async function startTest()
     let x=new URLSearchParams(window.location);
     let params= x.get("player");
 
-   let  start_test_url="https://codecyprus.org/th/test-api/start?" + params;
 
-    const res=await fetch(start_test_urlL)
+
+    const res=await fetch("https://codecyprus.org/th/test-api/start?" + params)
     const testData=await res.json();
 
     console.log(testData);
